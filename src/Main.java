@@ -36,7 +36,7 @@ public class Main {
         }
         else{
             System.out.println("Didn't recognize input please try again");
-            System.out.print("Type 'm' for mortgage calcualtor or 'f' for future value or 'q' to quit: ");
+            System.out.print("Type 'm' for mortgage calculator or 'f' for future value or 'q' to quit: ");
             handle_scanner(input = scanner.next());
         }
         return "";
