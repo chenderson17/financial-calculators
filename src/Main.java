@@ -8,7 +8,6 @@ public class Main {
         handle_scanner(scanner.next());
     }
 
-
     public static String handle_scanner(String input){
         if(input.toLowerCase().equals("m")){
             //calculate mortgage
@@ -31,6 +30,8 @@ public class Main {
             future_value(deposit,interest_rate,years);
         }
         else if(input.toLowerCase().equals("q")){
+            //quit and end the program
+            System.out.println("Have a nice day!");
             System.exit(0);
         }
         else{
@@ -55,9 +56,8 @@ public class Main {
     // Calculator 2: Future Value
     /* a. It would accept the deposit, interest rate, and number of
           years from the user
-        b. It would display the future value and the total interest
+       b. It would display the future value and the total interest
             earned
-
      */
     public static void future_value(double deposit, double interest_rate, double years){
         //FV = P × (1 + (r / 365))^(365 × t)
