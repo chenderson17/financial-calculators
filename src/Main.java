@@ -4,8 +4,12 @@ import java.util.Scanner;
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        System.out.print("Type 'm' for mortgage calcualtor or 'f' for future value: ");
-        String input = scanner.next();
+        System.out.print("Type 'm' for mortgage calculator or 'f' for future value or 'q' to quit: ");
+        handle_scanner(scanner.next());
+    }
+
+
+    public static String handle_scanner(String input){
         if(input.toLowerCase().equals("m")){
             //calculate mortgage
             System.out.print("Enter the principal:");
@@ -26,12 +30,16 @@ public class Main {
             double years = scanner.nextDouble();
             future_value(deposit,interest_rate,years);
         }
-        else{
-
+        else if(input.toLowerCase().equals("q")){
+            System.exit(0);
         }
-
+        else{
+            System.out.println("Didn't recognize input please try again");
+            System.out.print("Type 'm' for mortgage calcualtor or 'f' for future value or 'q' to quit: ");
+            handle_scanner(input = scanner.next());
+        }
+        return "";
     }
-
 
 
     // Calulator 1: Mortgage Calculator
@@ -60,5 +68,6 @@ public class Main {
         System.out.printf("Total Interest:$%.2f\n",total_interest);
 
     }
+
 
 }
